@@ -18,6 +18,8 @@ app.post('/user/:action/:target', (req, res) => {
 	res.send("Response received");
 });
 
+app.use(express.static('/usr/src/app'));
+
 app.listen(PORT, HOST, () => {
 	console.log('Running...')
 });
