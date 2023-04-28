@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 app.post('/user/:action/:target', (req, res) => {
 	console.log("user");
 	console.log(req.params);
-	res.send("Response received");
+	res.send(req.params);
 });
 
 app.use(express.static('/usr/src/app'));
