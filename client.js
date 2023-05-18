@@ -19,7 +19,7 @@ stop.innerHTML = "Stop";
 send.innerHTML = "Send";
 
 //// Assign the onclick functionality after the script has had a chance to load.
-start.onclick = () => {if(keep === null) { keep = setInterval(() => {ticker = ticker+1; console.log(ticker); e.innerHTML = ticker;}, 100)};}; 
+start.onclick = () => {if(keep === null) { keep = setInterval(() => {ticker = ticker+1; console.log(ticker); e.innerHTML = ticker;}, 100)};};
 stop.onclick = () => {clearInterval(keep); keep = null;};
 
 send.onclick = async () => {fetch("/secret")};
@@ -32,8 +32,17 @@ async function getMessage() {
 		console.log("SURPRISE!")
 		const d = document.getElementById("secret");
 		d.innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/4bMOTTJqGgM?start=64" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
-	} 
+	}
 };
-
 setInterval(getMessage, 1000);
+
+// Testing Image Loading functionality
+loadImage = document.getElementById('btnLoadImage');
+image = document.getElementById('loadedImage');
+
+async function getImage() {
+    image.src = "http://localhost:42070/delayed"
+}
+
+loadImage.onclick = getImage;
 

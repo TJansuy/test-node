@@ -16,9 +16,9 @@ app.get('/', (req, res) => {
 var secret = false;
 
 app.get('/messages', (req, res) => {
-	console.log("Messages checked " + secret + " : " + req.json());
+	console.log("Messages checked " + secret + ": " + req);
 	res.json({secretTrigger: secret});
-	secret = false;	
+	secret = false;
 });
 
 // POST requests
