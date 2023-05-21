@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    input {
+        font-size: 5vw;
+        margin: 0.1rem;
+    }
+    form {
+        display: flex;
+        justify-content: center;
+        margin-top: 50vh;
+    }
+</style>
 </head>
 <body>
-
-<p id="foo">Testing</p>
-
-<button id="btnStart">Start</button>
-<button id="btnStop">Stop</button>
-
-<button id="btnSend">Send</button>
-<div id="secret"></div>
-
-<form action="http://localhost:42070/submit" method="get">
+<form action="http://192.168.1.10:42070/submit" method="get">
     <input type="text" name="query" id="query" required />
     <input type="submit" />
-
 </form>
 
-<button id="btnLoadImage">Load Image</button>
-<img id="loadedImage" />
-<!-- Script has to be after the rest of the elements, otherwise there are issues using getElementById. Try to keep in mind the order that elements, including the scripts, are loaded -->
-<script src="client.js"></script>
 </body>
 </html>
